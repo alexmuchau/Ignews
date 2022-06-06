@@ -8,7 +8,9 @@ export function SignInButton() {
   const {status, data} = useSession();
 
   console.log(status)
-  console.log(data)
+  if(status == 'authenticated') {
+    console.log(data.user.name)
+  }
 
   return status == 'authenticated' ? (
     <button 
